@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIV CORE - سيرفر ديسكورد</title>
+<style>
+    /* تصميم الجسم */
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #0f7d43, #04a454);
+        font-family: Arial, sans-serif;
+        gap: 50px;
+        text-align: center;
+        margin: 0;
+    }
+
+    /* H1 متوهج ومتحرك */
+    h1 {
+        font-size: 4rem;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        text-shadow: 0 0 10px #00ff04, 0 0 20px #1f8c33, 0 0 30px #04ee27;
+        animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+        0% {
+            text-shadow: 0 0 10px #7289da, 0 0 20px #2b831d, 0 0 30px #00ff22;
+            color: #71ff89;
+        }
+        50% {
+            text-shadow: 0 0 20px #125ace, 0 0 30px #1a8328, 0 0 40px #00f708;
+            color: #05ff65;
+        }
+        100% {
+            text-shadow: 0 0 10px #09ff00, 0 0 20px #51ff00, 0 0 30px #00e845;
+            color: #a3f872;
+        }
+    }
+
+    /* تصميم الزر */
+    #myButton {
+        padding: 15px 40px;
+        font-size: 20px;
+        color: white;
+        background-color: #7289da;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* تأثير عند المرور */
+    #myButton:hover {
+        background-color: #5b6eae;
+        transform: scale(1.1);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    /* تأثير عند الضغط */
+    #myButton:active {
+        transform: scale(0.95);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    /* توهج خفيف عند المرور */
+    #myButton::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+        opacity: 0;
+        transition: all 0.5s ease;
+        border-radius: 50%;
+    }
+
+    #myButton:hover::before {
+        opacity: 1;
+        transform: scale(1);
+    }
+</style>
+</head>
+<body>
+    <h1>DIV CORE</h1>
+    <button id="myButton">انضم إلى سيرفر ديسكورد</button>
+
+    <script>
+        const button = document.getElementById("myButton");
+
+        if (button) {
+            button.addEventListener("click", () => {
+                window.open("https://discord.gg/NyYhfQmz", "_blank");
+            });
+        } else {
+            console.error("Button not found");
+        }
+    </script>
+</body>
+</html>
